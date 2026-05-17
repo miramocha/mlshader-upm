@@ -3,6 +3,8 @@
 using UnityEditor;
 using UnityEngine;
 
+namespace MiraGameDev.MLShader.Editor
+{
 public class MLShaderEditor : ShaderGUI
 {
     private bool showBaseSettings = true;
@@ -332,5 +334,6 @@ public class MLShaderEditor : ShaderGUI
             );
         }
     }
+}
 }
 #endif

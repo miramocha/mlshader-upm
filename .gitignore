@@ -9,6 +9,7 @@
 /[Mm]emoryCaptures/
 
 # IDE / tooling
+.cursor/
 .vs/
 .vscode/
 .idea/

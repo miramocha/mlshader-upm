@@ -1,8 +1,11 @@
 using UnityEditor;
 using UnityEngine;
+using MiraGameDev.MLShader;
 
+namespace MiraGameDev.MLShader.Editor
+{
 [CustomEditor(typeof(MLGlobalShaderController))]
-public class MLGlobalShaderControllerEditor : Editor
+public class MLGlobalShaderControllerEditor : UnityEditor.Editor
 {
     private bool showColorModifierGroup1 = true;
     private bool showColorModifierGroup2 = true;
@@ -140,4 +143,5 @@ public class MLGlobalShaderControllerEditor : Editor
         EditorGUILayout.EndVertical();
         EditorGUILayout.Space(width: 2f);
     }
+}
 }

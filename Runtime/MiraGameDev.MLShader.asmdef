@@ -1,12 +1,8 @@
 {
-    "name": "MiraGameDev.MLShader.Editor",
-    "rootNamespace": "MiraGameDev.MLShader.Editor",
-    "references": [
-        "MiraGameDev.MLShader"
-    ],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "name": "MiraGameDev.MLShader",
+    "rootNamespace": "MiraGameDev.MLShader",
+    "references": [],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

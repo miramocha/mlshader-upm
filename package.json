@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "displayName": "MLShader",
   "description": "Shader Graph utilities, materials, and helpers for toon/URP workflows (MLShader).",
-  "unity": "6000.0",
+  "unity": "6000.4",
   "unityRelease": "0f1",
   "author": {
     "name": "MiraGameDev"
@@ -14,5 +14,16 @@
     "urp",
     "toon",
     "cel"
+  ],
+  "dependencies": {
+    "com.unity.shadergraph": "17.4.0",
+    "com.unity.render-pipelines.universal": "17.4.0"
+  },
+  "samples": [
+    {
+      "displayName": "Examples",
+      "description": "Sample materials and textures demonstrating MLShader usage.",
+      "path": "Samples~/Examples"
+    }
   ]
 }
