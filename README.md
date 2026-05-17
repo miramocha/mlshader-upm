@@ -1,92 +1,205 @@
-# MLShader Property Documentation
+# MLShader
 
-This document describes the user-facing properties for the **MLShader**.
+**MLShader** is a Unity **Shader Graph** package for stylized **toon / cel** materials on the **Universal Render Pipeline (URP)**. It ships the main **MLShader** graph, reusable subgraphs, HLSL helpers, optional runtime scripts, and vendored Unity sample subgraphs so consumers do not need to import official Shader Graph samples.
 
-> **Note on UV Indices:** For all properties using a UV Index range (-1 to 3), an index of **-1** uses the **View Projection** model (Matcap-style mapping). Indices 0 through 3 correspond to the standard mesh UV channels (UV0-UV3).
+| | |
+|---|---|
+| **Unity package** | `com.miragamedev.mlshader` |
+| **Minimum editor** | **Unity 6000.4** (`6000.4.0f1` or compatible) |
+| **Render pipeline** | **URP** via `com.unity.render-pipelines.universal` |
 
-> **Note on Blend Type Indices:** For properties using a Blend Type Index (0 to 3), the mapping is:
-> *   **0**: Overwrite
-> *   **1**: Multiply
-> *   **2**: Screen
-> *   **3**: Overlay
+Dependencies are declared in [`package.json`](package.json) (notably **Shader Graph** and **URP** 17.4.x).
 
-## 1. URP System Settings
-Settings regarding integration with the Universal Render Pipeline.
+---
 
-*   **Enable URP Soft Shadows** (Toggle): Enables or disables soft shadow filtering for URP lights.
-*   **Enable URP Screen Space Shadows** (Toggle): Enables support for screen-space shadows if configured in the URP asset.
+## Requirements
 
-## 2. Main Material Settings
-Primary colors and textures for the model surface.
+- **Unity 6** (6000.4 recommended; see `package.json` fields `unity` / `unityRelease`).
+- A project using **URP** (the package does not target the Built-in Renderer or HDRP for the main graph).
+- **Shader Graph** package (installed automatically as a dependency when you add this package via UPM).
 
-*   **Main Color** (Color): The primary tint for the main texture and lit areas.
-*   **Main Texture** (2D Texture): The base map for the material.
-*   **Main/Shade Texture UV Index** (Range -1 to 3): Selects the UV channel for main and shade textures.
-*   **Main/Shade Texture Blend Type Index** (Range 0 to 3): Controls the blend mode (Multiply, Add, etc.) for the shade texture.
-*   **Main/Shade Texture Opacity** (Range 0 to 1): Visibility of the secondary shade texture layer.
+---
 
-## 3. Toon Shading Settings
-Core parameters for the cel-shaded "toon" effect.
+## Installation
 
-*   **Shade Color** (Color): The color used in shadowed or unlit areas.
-*   **Shade Texture** (2D Texture): A texture specifically applied to the shaded areas.
-*   **Shading Toony Factor** (Range 0 to 1): Sharpness of the transition between lit and shaded areas.
-*   **Shading Shift Factor** (Range -1 to 1): Adjusts the shadow threshold to cover more or less of the model.
-*   **Shade Opacity** (Range 0 to 1): Overall intensity of the shadow layer.
-*   **Shading Attenuation Invert Lerp Min/Max** (Vector2): Fine-tunes how light attenuation (shadow maps and distance) affects toon stepping.
+### Option A — Add package from Git URL (recommended)
 
-## 4. Matcap Settings
-Material Capture (Matcap) settings for simulated reflections and lighting.
+1. In Unity, open **Window → Package Manager**.
+2. Click **+** → **Add package from git URL…**
+3. Enter your clone URL, for example:
 
-*   **Enable Matcap Indirect Light** (Toggle): When enabled, uses a Matcap calculation for indirect light behavior.
-*   **Matcap Shading Toony Factor** (Range 0 to 1): Edge sharpness for the Matcap effect.
-*   **Matcap Shading Shift Factor** (Range -1 to 1): Threshold shift for the Matcap highlights/shadows.
-*   **Matcap Shading UV Offset** (Vector2): Offsets the spherical UV sampling for the Matcap.
+   ```text
+   https://github.com/YOUR_ORG/YOUR_REPO.git
+   ```
 
-## 5. Normal Mapping
-Surface detail and bumpiness settings.
+4. To pin a **branch** or **tag**, append it after `.git`:
 
-*   **Normal Texture** (2D Normal Map): The normal map texture.
-*   **Normal Strength** (Float): Intensity of the surface detail.
-*   **Normal Texture UV Index** (Range -1 to 3): The UV channel used for normal mapping.
+   ```text
+   https://github.com/YOUR_ORG/YOUR_REPO.git#main
+   https://github.com/YOUR_ORG/YOUR_REPO.git#v0.1.0
+   ```
 
-## 6. Indirect & Ambient Lighting
-Settings for environment and background light.
+5. Unity clones the repo; the folder that contains **`package.json`** at its root is the package root.
 
-*   **Indirect Light Opacity** (Range 0 to 1): Contribution of environmental light to the final color.
-*   **Indirect Light Color Blend Type Index** (Range 0 to 3): Blending mode for indirect light color.
-*   **Ambient Color** (Color): A constant flat color added to the material.
-*   **Ambient Opacity** (Range 0 to 1): Strength of the ambient color tint.
+### Option B — Edit `Packages/manifest.json`
 
-## 7. Direct Lighting
-Behavior of real-time light sources.
+Add an entry under `"dependencies"` (replace the URL and optional revision with yours):
 
-*   **Direct Light Toony Factor** (Range 0 to 1): Sharpness of shadow edges from direct light sources.
-*   **Direct Light Shift Factor** (Range -1 to 1): Adjusts the coverage area of shadows from direct lights.
-*   **Direct Light Opacity** (Range 0 to 1): The intensity of light received from direct sources.
+```json
+{
+  "dependencies": {
+    "com.miragamedev.mlshader": "https://github.com/YOUR_ORG/YOUR_REPO.git#main",
+    "com.unity.render-pipelines.universal": "17.4.0"
+  }
+}
+```
 
-## 8. Rim Light Settings
-Outer edge lighting used for silhouette definition.
+Use the **same package name** as in this repo’s `package.json`: `com.miragamedev.mlshader`.
 
-*   **Rim Light Color** (HDR Color): The color of the rim highlight.
-*   **Rim Light Opacity** (Range 0 to 1): Intensity of the rim light effect.
-*   **Rim Light Toony Factor** (Range 0 to 1): Sharpness of the rim light transition.
-*   **Rim Light Shift Factor** (Float): Expands or contracts the rim light area.
-*   **Rim Light Fresnel Power** (Float): Controls the falloff of the rim light relative to the view angle.
+### Option C — Local development (embedded / file path)
 
-## 9. Color Gradient Settings
-Vertical or directional color gradients applied to the mesh.
+To test changes without pushing to Git, add a **local** dependency pointing at this folder (the directory that contains `package.json`):
 
-*   **Gradient Main Color** (Color): The start color of the gradient.
-*   **Gradient Shade Color** (Color): The end color of the gradient.
-*   **Gradient Opacity** (Range 0 to 1): Overall visibility of the gradient overlay.
-*   **Gradient UV Rotation** (Range 0 to 360): Rotates the direction of the gradient application.
-*   **Gradient Shift Factor** (Float): Moves the midpoint of the color transition.
-*   **Gradient Toony Factor** (Range 0 to 1): Sharpness of the gradient transition.
-*   **Gradient UV Index** (Range -1 to 3): The UV channel used to calculate the gradient.
+```json
+"com.miragamedev.mlshader": "file:../../path/to/MLShader/package/root"
+```
 
-## 10. Alpha Mask Settings
-Transparency and clipping settings.
+Adjust the relative path from your project’s `Packages` folder so it resolves correctly.
 
-*   **Alpha Mask Texture** (2D Texture): Grayscale texture used to define transparency or cutouts.
-*   **Alpha Mask Texture UV Index** (Range -1 to 3): The UV channel used for the alpha mask.
+---
+
+## Optional samples
+
+The package registers a UPM **sample** that copies example assets into your project:
+
+1. **Window → Package Manager** → select **MLShader**.
+2. Open the **Samples** list.
+3. Import **MLShader Examples** (source path in the package: `Samples~/MLShaderExamples`).
+
+Samples are optional; the core graphs and subgraphs work without importing them.
+
+---
+
+## Quick start
+
+1. Create or select a **Material**.
+2. Assign the shader **MLShader** (from Shader Graph `Graph/MLShader.shadergraph`, imported as a Shader Graph asset).
+3. Tune properties on the material (see **Material property reference** below, or the **Custom** `ShaderGUI` if enabled in your project).
+
+Runtime helpers (optional):
+
+- `MiraGameDev.MLShader.MLShaderRoot` — per-renderer dissolve / root transform properties.
+- `MiraGameDev.MLShader.MLGlobalShaderController` — global HSL / color groups for shader tuning.
+
+---
+
+## Package layout (overview)
+
+| Path | Purpose |
+|------|---------|
+| `Graph/` | Main Shader Graph and fullscreen graphs; `Subgraphs/` for reusable blocks |
+| `ShaderLibrary/` | HLSL includes (BIRP helpers folder name kept for legacy paths; project targets **URP**) |
+| `ThirdParty/ShaderGraph/` | Vendored Unity Shader Graph sample/template subgraphs ([`Third Party Notices.md`](Third%20Party%20Notices.md)) |
+| `Runtime/` | Runtime C# (`MiraGameDev.MLShader` assembly) |
+| `Editor/` | Editor C# (`MiraGameDev.MLShader.Editor`) |
+| `Samples~/MLShaderExamples/` | Optional importable examples (UPM sample) |
+| `Textures/` | Shared textures used by the package |
+
+---
+
+## License and third-party content
+
+Vendored Shader Graph assets are described in **[`Third Party Notices.md`](Third%20Party%20Notices.md)**. Keep that file with the package if you redistribute it.
+
+---
+
+## Changelog
+
+See **[`CHANGELOG.md`](CHANGELOG.md)**.
+
+---
+
+# Material property reference
+
+This section documents user-facing properties on the **MLShader** material.
+
+> **UV indices:** For properties using a UV index in the range **-1** to **3**, **-1** uses **view projection** (matcap-style) mapping. **0–3** map to mesh UV channels **UV0–UV3**.
+
+> **Blend type indices:** For properties using a blend type index **0** to **3**:
+> - **0**: Overwrite  
+> - **1**: Multiply  
+> - **2**: Screen  
+> - **3**: Overlay  
+
+## 1. URP system settings
+
+Integration with the Universal Render Pipeline.
+
+- **Enable URP Soft Shadows** (Toggle): Soft shadow filtering for URP lights.
+- **Enable URP Screen Space Shadows** (Toggle): Support for screen-space shadows when configured on the URP asset.
+
+## 2. Main material settings
+
+- **Main Color** (Color): Tint for the main texture and lit areas.
+- **Main Texture** (2D Texture): Base color map.
+- **Main/Shade Texture UV Index** (Range -1 to 3): UV channel for main and shade textures.
+- **Main/Shade Texture Blend Type Index** (Range 0 to 3): Blend mode for the shade texture layer.
+- **Main/Shade Texture Opacity** (Range 0 to 1): Strength of the shade texture layer.
+
+## 3. Toon shading settings
+
+- **Shade Color** (Color): Color in shadowed or unlit regions.
+- **Shade Texture** (2D Texture): Texture for shaded areas.
+- **Shading Toony Factor** (Range 0 to 1): Sharpness of the lit/shadow boundary.
+- **Shading Shift Factor** (Range -1 to 1): Moves the shadow threshold.
+- **Shade Opacity** (Range 0 to 1): Intensity of the shade layer.
+- **Shading Attenuation Invert Lerp Min/Max** (Vector2): Fine-tunes light attenuation vs. toon stepping.
+
+## 4. Matcap settings
+
+- **Enable Matcap Indirect Light** (Toggle): Matcap-style indirect contribution.
+- **Matcap Shading Toony Factor** (Range 0 to 1): Edge sharpness for matcap shading.
+- **Matcap Shading Shift Factor** (Range -1 to 1): Threshold shift for matcap highlights/shadows.
+- **Matcap Shading UV Offset** (Vector2): Offsets spherical UV sampling.
+
+## 5. Normal mapping
+
+- **Normal Texture** (2D Normal Map): Normal map.
+- **Normal Strength** (Float): Normal intensity.
+- **Normal Texture UV Index** (Range -1 to 3): UV channel for normals.
+
+## 6. Indirect and ambient lighting
+
+- **Indirect Light Opacity** (Range 0 to 1): Environment light contribution.
+- **Indirect Light Color Blend Type Index** (Range 0 to 3): Blend mode for indirect tint.
+- **Ambient Color** (Color): Flat ambient tint.
+- **Ambient Opacity** (Range 0 to 1): Ambient strength.
+
+## 7. Direct lighting
+
+- **Direct Light Toony Factor** (Range 0 to 1): Sharpness of direct-light shadow edges.
+- **Direct Light Shift Factor** (Range -1 to 1): Coverage of direct-light shadows.
+- **Direct Light Opacity** (Range 0 to 1): Direct light intensity.
+
+## 8. Rim light settings
+
+- **Rim Light Color** (HDR Color): Rim tint.
+- **Rim Light Opacity** (Range 0 to 1): Rim strength.
+- **Rim Light Toony Factor** (Range 0 to 1): Sharpness of the rim transition.
+- **Rim Light Shift Factor** (Float): Expands or contracts the rim.
+- **Rim Light Fresnel Power** (Float): View-angle falloff of the rim.
+
+## 9. Color gradient settings
+
+- **Gradient Main Color** (Color): Gradient start color.
+- **Gradient Shade Color** (Color): Gradient end color.
+- **Gradient Opacity** (Range 0 to 1): Overall gradient visibility.
+- **Gradient UV Rotation** (Range 0 to 360): Rotates gradient direction.
+- **Gradient Shift Factor** (Float): Shifts the gradient midpoint.
+- **Gradient Toony Factor** (Range 0 to 1): Sharpness of the gradient.
+- **Gradient UV Index** (Range -1 to 3): UV channel driving the gradient.
+
+## 10. Alpha mask settings
+
+- **Alpha Mask Texture** (2D Texture): Mask for transparency or cutouts.
+- **Alpha Mask Texture UV Index** (Range -1 to 3): UV channel for the mask.

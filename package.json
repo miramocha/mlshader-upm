@@ -21,9 +21,9 @@
   },
   "samples": [
     {
-      "displayName": "Examples",
+      "displayName": "MLShader Examples",
       "description": "Sample materials and textures demonstrating MLShader usage.",
-      "path": "Samples~/Examples"
+      "path": "Samples~/MLShaderExamples"
     }
   ]
 }
