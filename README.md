@@ -7,6 +7,7 @@
 | **Unity package** | `com.miragamedev.mlshader` |
 | **Minimum editor** | **Unity 6000.4** (`6000.4.0f1` or compatible) |
 | **Render pipeline** | **URP** via `com.unity.render-pipelines.universal` |
+| **Repository** | [github.com/miramocha/mlshader-upm](https://github.com/miramocha/mlshader-upm) |
 
 Dependencies are declared in [`package.json`](package.json) (notably **Shader Graph** and **URP** 17.4.x).
 
@@ -26,35 +27,34 @@ Dependencies are declared in [`package.json`](package.json) (notably **Shader Gr
 
 1. In Unity, open **Window → Package Manager**.
 2. Click **+** → **Add package from git URL…**
-3. Enter your clone URL, for example:
+3. Paste:
 
    ```text
-   https://github.com/YOUR_ORG/YOUR_REPO.git
+   https://github.com/miramocha/mlshader-upm.git
    ```
 
-4. To pin a **branch** or **tag**, append it after `.git`:
+4. Optional: pin a **branch** or **tag** by appending `#` after `.git`:
 
    ```text
-   https://github.com/YOUR_ORG/YOUR_REPO.git#main
-   https://github.com/YOUR_ORG/YOUR_REPO.git#v0.1.0
+   https://github.com/miramocha/mlshader-upm.git#main
+   https://github.com/miramocha/mlshader-upm.git#v0.1.0
    ```
 
-5. Unity clones the repo; the folder that contains **`package.json`** at its root is the package root.
+5. Unity clones the repository. This repo’s **package root** is the repository root (where [`package.json`](package.json) lives).
 
 ### Option B — Edit `Packages/manifest.json`
 
-Add an entry under `"dependencies"` (replace the URL and optional revision with yours):
+Add (or merge) under `"dependencies"` in your Unity project:
 
 ```json
 {
   "dependencies": {
-    "com.miragamedev.mlshader": "https://github.com/YOUR_ORG/YOUR_REPO.git#main",
-    "com.unity.render-pipelines.universal": "17.4.0"
+    "com.miragamedev.mlshader": "https://github.com/miramocha/mlshader-upm.git#main"
   }
 }
 ```
 
-Use the **same package name** as in this repo’s `package.json`: `com.miragamedev.mlshader`.
+Adjust `#main` to another branch or tag as needed. The dependency name must be **`com.miragamedev.mlshader`** (see `package.json` in this repo).
 
 ### Option C — Local development (embedded / file path)
 
