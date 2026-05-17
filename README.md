@@ -41,8 +41,10 @@ Dependencies are declared in [`package.json`](package.json) (notably **Shader Gr
 
    ```text
    https://github.com/miramocha/mlshader-upm.git#main
-   https://github.com/miramocha/mlshader-upm.git#v0.1.0
+   https://github.com/miramocha/mlshader-upm.git#v1.0.0
    ```
+
+   **Release tags** use a **`v` prefix** (e.g. Git tag `v1.0.0`). The [`package.json`](package.json) `version` field stays plain SemVer (**`1.0.0`**, no `v`) — bump that on the tagged commit, then create and push the matching `v…` tag on GitHub.
 
 5. Unity clones the repository. This repo’s **package root** is the repository root (where [`package.json`](package.json) lives).
 
@@ -53,12 +55,12 @@ Add (or merge) under `"dependencies"` in your Unity project:
 ```json
 {
   "dependencies": {
-    "com.miragamedev.mlshader": "https://github.com/miramocha/mlshader-upm.git#main"
+    "com.miragamedev.mlshader": "https://github.com/miramocha/mlshader-upm.git#v1.0.0"
   }
 }
 ```
 
-Adjust `#main` to another branch or tag as needed. The dependency name must be **`com.miragamedev.mlshader`** (see `package.json` in this repo).
+Use `#branch`, `#v1.0.0` (or another tag), or a full commit hash after `.git`. The dependency name must be **`com.miragamedev.mlshader`** (see `package.json` in this repo).
 
 ### Option C — Local development (embedded / file path)
 
