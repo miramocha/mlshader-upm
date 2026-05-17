@@ -40,7 +40,7 @@ Dependencies are declared in [`package.json`](package.json) (notably **Shader Gr
 4. Optional: pin a **branch** or **tag** by appending `#` after `.git`:
 
    ```text
-   https://github.com/miramocha/mlshader-upm.git#master
+   https://github.com/miramocha/mlshader-upm.git#main
    https://github.com/miramocha/mlshader-upm.git#develop
    https://github.com/miramocha/mlshader-upm.git#v1.0.0
    ```
@@ -61,14 +61,14 @@ Add (or merge) under `"dependencies"` in your Unity project:
 }
 ```
 
-Use `#branch` (e.g. **`master`**, **`develop`**), `#v1.0.0` (or another tag), or a full commit hash after `.git`. The dependency name must be **`com.miragamedev.mlshader`** (see `package.json` in this repo).
+Use `#branch` (e.g. **`main`**, **`develop`**), `#v1.0.0` (or another tag), or a full commit hash after `.git`. The dependency name must be **`com.miragamedev.mlshader`** (see `package.json` in this repo).
 
 ### Repository branches
 
 | Branch | Role |
 |--------|------|
-| **`master`** | Default branch; release commits and **`v*`** tags are expected here. |
-| **`develop`** | Day-to-day integration; merge into **`master`** when ready to release. |
+| **`main`** | Default branch; release commits and **`v*`** tags are expected here. |
+| **`develop`** | Day-to-day integration; merge into **`main`** when ready to release. |
 
 There is no **`stable`** or **`release`** branch — **Git tags** (`v…`) are the supported way to pin versions.
 
