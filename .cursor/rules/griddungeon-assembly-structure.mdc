@@ -1,0 +1,41 @@
+---
+description: Where GridDungeon C# and UXML belong (Framework vs Data) and asm dependency rules
+alwaysApply: true
+---
+
+# GridDungeon — Framework vs Data
+
+## Assemblies (see `GridDungeon.Framework.asmdef` / `GridDungeon.Data.asmdef`)
+
+- **`GridDungeon.Framework`** — `Assets/GridDungeon/Framework/**`. Reusable engine/domain code. **Do not reference `GridDungeon.Data`.**
+- **`GridDungeon.Data`** — `Assets/GridDungeon/Data/**`. This title only (e.g. exploration UI state, game-specific glue). **May reference Framework.**
+
+## Put new C# here
+
+| In Framework | In Data |
+|--------------|---------|
+| ScriptableObject **type** definitions (`CreateAssetMenu`), `ActionData`, `CharacterData`, `EncounterData`, `StatusData`, encounter/party/action execution models (`EncounterParty`, `QueuedActions`, `IActionHandler`, …) | Types tightly coupled to **this** game’s UI graphs: `ExplorationUIState`, `MessagesUIState`, `*UIState` under `Data/UI/State`, etc. |
+| `ICharacterTemplate` implementors, `CharacterInstance` / `PlayerCharacterInstance` / `EncounterCharacterInstance`, status stack (`IStatus`, factories) | Bridges only if Framework must stay unaware (e.g. `ExplorationPartyBridge` in Framework + wire-up in Data) |
+
+When a type **cannot** live in Framework because it needs `ExplorationUIState` (Data): use a small **bridge** in Framework (callbacks/static accessors) and wire from Data — avoid Framework → Data references.
+
+## Namespace
+
+Keep **`GridDungeon.Core`** unless you introduce a new namespace deliberately (Unity assets/UXML often assume this).
+
+## UI Toolkit / UXML
+
+`data-source-type` must list the **assembly where the type is compiled**:
+
+- Example: `GridDungeon.Core.EncounterRow, GridDungeon.Framework, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null`
+- UI state types still in Data: use `..., GridDungeon.Data, ...`
+
+Wrong assembly → runtime `TypeLoadException` in `VisualTreeAsset.CloneTree()`.
+
+## Content assets (.asset, prefabs, scenes)
+
+Authoring files may live under `Data/` folders for organization; **script** location defines the **assembly**. After moving scripts, update UXML/prefab/scene **type assembly strings** if they embed full type names.
+
+## Editor
+
+`GridDungeon.Editor` references both assemblies; editor-only drawers can use either side.

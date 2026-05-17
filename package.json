@@ -1,0 +1,18 @@
+{
+  "name": "com.miragamedev.mlshader",
+  "version": "0.1.0",
+  "displayName": "MLShader",
+  "description": "Shader Graph utilities, materials, and helpers for toon/URP workflows (MLShader).",
+  "unity": "6000.0",
+  "unityRelease": "0f1",
+  "author": {
+    "name": "MiraGameDev"
+  },
+  "keywords": [
+    "shader",
+    "shader-graph",
+    "urp",
+    "toon",
+    "cel"
+  ]
+}

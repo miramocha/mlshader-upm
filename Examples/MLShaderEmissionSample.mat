@@ -1,0 +1,383 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8783698842477636862
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Editor::UnityEditor.Rendering.Universal.AssetVersion
+  version: 10
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MLShaderEmissionSample
+  m_Shader: {fileID: -6465566751694194690, guid: 621d51dc5f2974048b32239e9a6058f5,
+    type: 3}
+  m_ValidKeywords:
+  - _ADDITIONAL_LIGHT_SHADOWS
+  - _ALPHATEST_ON
+  - _ENABLE_DIRECT_LIGHTING
+  - _INDIRECT_LIGHTING_MODE_REAL_LIGHT
+  - _MAIN_LIGHT_SHADOWS
+  - _SHADOWS_SOFT
+  - _TRANSPARENCY_MODE_NON_DITHER
+  m_InvalidKeywords:
+  - _ENABLE_AMBIENT
+  - _ENABLE_EMISSION_2
+  - _LIGHTING_MODE_MATCAP
+  - _SHADOWS_SCREEN
+  - _SPECULAR_SETUP
+  - _TRANSPARENCY_MODE_TRANSPARENT
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 2450
+  stringTagMap:
+    RenderType: TransparentCutout
+  disabledShaderPasses:
+  - MOTIONVECTORS
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Alpha_Mask_Texture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 2, y: 2}
+        m_Offset: {x: 0, y: 0}
+    - _BaseMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Base_Texture:
+        m_Texture: {fileID: 2800000, guid: 30aa7858588e65c46a862620e7246016, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Emission_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 54e691b0683031e4ba3a8bdfb99488ac, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Emission_Texture_2:
+        m_Texture: {fileID: 2800000, guid: 54e691b0683031e4ba3a8bdfb99488ac, type: 3}
+        m_Scale: {x: 1, y: -1}
+        m_Offset: {x: 0, y: 0.33}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Main_Texture:
+        m_Texture: {fileID: 2800000, guid: 30aa7858588e65c46a862620e7246016, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal_Texture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 2, y: 2}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Shade_Texture:
+        m_Texture: {fileID: 2800000, guid: 30aa7858588e65c46a862620e7246016, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2D_Array:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ADDITIONAL_LIGHT_SHADOWS: 1
+    - _AddPrecomputedVelocity: 0
+    - _Add_Emission_Mask_to_Alpha_Mask: 0
+    - _AlphaClip: 1
+    - _AlphaToMask: 1
+    - _Alpha_Clip_Threshold: 0
+    - _Alpha_Mask_Texture_UV_Index: 0
+    - _Ambient_Opacity: 0
+    - _BUILTIN_AlphaClip: 0
+    - _BUILTIN_Blend: 0
+    - _BUILTIN_CullMode: 2
+    - _BUILTIN_DstBlend: 0
+    - _BUILTIN_QueueControl: -1
+    - _BUILTIN_QueueOffset: 0
+    - _BUILTIN_SrcBlend: 1
+    - _BUILTIN_Surface: 0
+    - _BUILTIN_ZTest: 4
+    - _BUILTIN_ZWrite: 1
+    - _BUILTIN_ZWriteControl: 0
+    - _Base_Shade_Color_Override_Group_Index: 0
+    - _Base_Shade_Texture_Blend_Type_Index: 0
+    - _Base_Shade_Texture_Opacity: 0
+    - _Base_Shade_Texture_UV_Index: 0
+    - _Blend: 0
+    - _BlendModePreserveSpecular: 1
+    - _BumpScale: 1
+    - _CastShadows: 1
+    - _ClearCoatMask: 0
+    - _ClearCoatSmoothness: 0
+    - _Color_Modifier_Group_Index: -1
+    - _Color_Override_Group_Index: -1
+    - _Cull: 0
+    - _Cutoff: 0.5
+    - _DetailAlbedoMapScale: 1
+    - _DetailNormalMapScale: 1
+    - _Direct_Light_Opacity: 0
+    - _Direct_Light_Shift_Factor: -0.361
+    - _Direct_Light_Toony_Factor: 0
+    - _Disable_Matcap_Shading: 0
+    - _Dissolve_Edge_Width: 0
+    - _Dissolve_Flip_Axis: 0
+    - _Dissolve_Offset: 0
+    - _Dissolve_Toony_Factor: 0
+    - _DstBlend: 0
+    - _DstBlendAlpha: 0
+    - _ENABLE_AMBIENT: 1
+    - _ENABLE_DIRECT_LIGHTING: 1
+    - _ENABLE_EMISSION_2: 1
+    - _Emission_Intensity_Multiplier_1: 0
+    - _Emission_Intensity_Multiplier_2: 25
+    - _Emission_Mask_Animation_Speed: 1
+    - _Emission_Mask_Animation_Speed_1: 0.5
+    - _Emission_Mask_Animation_Speed_2: -0.7
+    - _Emission_Mask_Offset: 0
+    - _Emission_Mask_Offset_1: 0
+    - _Emission_Mask_Offset_2: 0
+    - _Emission_Mask_Rotation_1: 0
+    - _Emission_Mask_Rotation_2: 0
+    - _Emission_Mask_Shading_Shift_Factor: 0.59
+    - _Emission_Mask_Shading_Shift_Factor_1: 0.63
+    - _Emission_Mask_Shading_Shift_Factor_2: 0.43
+    - _Emission_Mask_Swap_Axis_1: 0
+    - _Emission_Mask_Swap_Axis_2: 1
+    - _Emission_Mask_Texture_UV_Index: 0
+    - _Emission_Mask_Texture_UV_Index_1: 0
+    - _Emission_Mask_Tiling: 20
+    - _Emission_Mask_Tiling_1: 3.72
+    - _Emission_Mask_Tiling_2: 7.58
+    - _Emission_Mask_Toony_Factor: 1
+    - _Emission_Mask_Toony_Factor_1: 0
+    - _Emission_Mask_Toony_Factor_2: 0
+    - _Emission_Mask_UV_Index_1: 0
+    - _Emission_Mask_UV_Index_2: 0
+    - _Emission_Mask_UV_Polar_Coordinates_Blend: 0
+    - _Emission_Mask_UV_Polar_Coordinates_Blend_1: 0
+    - _Emission_Mask_UV_Polar_Coordinates_Blend_2: 0
+    - _Emission_Opacity_1: 1
+    - _Emission_Opacity_2: 1
+    - _Emission_Saturation_Adjustment_1: 0
+    - _Emission_Saturation_Adjustment_2: 2
+    - _Emission_Saturation_Multiplier_1: 1
+    - _Emission_Texture_UV_Index_1: 0
+    - _Emission_Texture_UV_Index_2: 0
+    - _Emission_UV_Animation_Speed_1: 0
+    - _Enable_Dissolve: 0
+    - _Enable_Matcap_Indirect_Light: 0
+    - _Enable_Root_Transform_Offsets: 0
+    - _EnvironmentReflections: 1
+    - _Glitter_Hue_Offset: 0.102
+    - _Glitter_Hue_Shift_Speed: 0
+    - _Glitter_Intensity_Multiplier: 40
+    - _Glitter_Noise_Rotation_Offset: 0.047
+    - _Glitter_Noise_Rotation_Speed: 0.171
+    - _Glitter_Opacity: 0.436
+    - _Glitter_Polar_Coordinates_UV_Blend: 1
+    - _Glitter_Polar_Coordinates_UV_Opacity: 0
+    - _Glitter_Posterize_Blend: 0
+    - _Glitter_Posterize_Opacity: 1
+    - _Glitter_Posterize_Steps: 20
+    - _Glitter_SmoothStep_Edge: 0.28
+    - _Glitter_SmoothStep_Edge_Offset: 0.002
+    - _Glitter_UV_Index: -2
+    - _Glitter_UV_Polar_Coordinates_Blend: 1
+    - _Glitter_UV_Polar_Coordinates_Length_Scale: 1
+    - _Glitter_UV_Polar_Coordinates_Radial_Scale: 0.95
+    - _Glitter_UV_Rotation_Speed: 2
+    - _Glitter_UV_Tiling: 1
+    - _GlossMapScale: 0
+    - _Glossiness: 0
+    - _GlossyReflections: 0
+    - _Gradient_Offset: 0.3
+    - _Gradient_Opacity: 0
+    - _Gradient_Shift_Factor: 0.595
+    - _Gradient_Toony_Factor: 0.224
+    - _Gradient_UV_Index: 0
+    - _Gradient_UV_Rotation: 152.9
+    - _HSL_Shift_Group_Index: 1
+    - _INDIRECT_LIGHTING_MODE: 1
+    - _Indirect_Light_Color_Blend_Type_Index: 1
+    - _Indirect_Light_Opacity: 0
+    - _Indirect_Light_Screen_Opacity: 0
+    - _Invert_Base_Shade_Local: 0
+    - _Invert_Main_Shade_Local: 0
+    - _LIGHTING_MODE: 0
+    - _Lighting_Modifier_Group_Index: -1
+    - _MAIN_LIGHT_SHADOWS: 1
+    - _MAIN_LIGHT_SHADOWS_CASCADE: 0
+    - _Main_Shade_Texture_Blend_Type_Index: 1
+    - _Main_Shade_Texture_Opacity: 1
+    - _Main_Shade_Texture_UV_Index: -1
+    - _Main_Texture_UV_Index: 0
+    - _Matcap_Highlight_Star_Blend_Type_Index: 0
+    - _Matcap_Highlight_Star_Points: 5
+    - _Matcap_Highlight_Star_Radial_Scale: 0.08
+    - _Matcap_Highlight_Star_Scale: 0.769
+    - _Matcap_Highlight_Star_Shading_Shift_Factor: 0
+    - _Matcap_Highlight_Star_Shading_Toony_Factor: 1
+    - _Matcap_Shading_Shift_Factor: 0.43
+    - _Matcap_Shading_Toony_Factor: 1
+    - _Metallic: 0
+    - _Normal_Strength: 0.96
+    - _Normal_Texture_UV_Index: 0
+    - _OcclusionStrength: 1
+    - _Opacity: 1
+    - _Outline_Shift_Factor: 999
+    - _Outline_Toony_Factor: 1
+    - _Parallax: 0.005
+    - _Post_Processing_Group_Index: 0
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _ReceiveShadows: 1
+    - _Rim_Light_Fresnel_Power: 14.09
+    - _Rim_Light_Intensity_Multiplier: 1
+    - _Rim_Light_Opacity: 1
+    - _Rim_Light_Shift_Factor: -0.5
+    - _Rim_Light_Toony_Factor: 0
+    - _SHADOWS_SCREEN: 1
+    - _SHADOWS_SOFT: 1
+    - _SHADOWS_SOFT2: 0
+    - _Shade_Opacity: 1
+    - _Shade_Texture_UV_Index: 0
+    - _Shader_Global_Group_Index: 0
+    - _Shading_Shift_Factor: -0.033
+    - _Shading_Toony_Factor: 0
+    - _Smoothness: 0.5
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _SrcBlendAlpha: 1
+    - _Surface: 0
+    - _TRANSPARENCY_MODE: 0
+    - _WorkflowMode: 0
+    - _XRMotionVectorsPass: 1
+    - _ZTest: 4
+    - _ZWrite: 1
+    - _ZWriteControl: 0
+    m_Colors:
+    - _Ambient_Color: {r: 0, g: 0, b: 0, a: 1}
+    - _Ambient_Color_Opacity: {r: 0, g: 0, b: 0, a: 0}
+    - _Backface_Color_Opacity: {r: 0, g: 0, b: 0, a: 0.9647059}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Base_Color: {r: 0, g: 0, b: 0, a: 1}
+    - _Base_Color_Opacity: {r: 0.5764706, g: 0.4392157, b: 0.8588236, a: 1}
+    - _Base_Shade_Toony_Shift_Factor: {r: 1, g: 0, b: 0, a: 0}
+    - _Brightness_Contrast_Local: {r: 0, g: 0, b: 0, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Direct_Light_Toony_Shift_Factor: {r: 1, g: 0, b: 0, a: 0}
+    - _Dissolve_Edge_Color_Opacity: {r: 0, g: 0, b: 0, a: 0}
+    - _Dissolve_Toony_Shift_Factor: {r: 1, g: 0, b: 0, a: 0}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Emission_Mask_Toony_Shading_Shift_Factor_1: {r: 0, g: 0, b: 0, a: 0}
+    - _Emission_Mask_Toony_Shading_Shift_Factor_2: {r: 1, g: 0, b: 0, a: 0}
+    - _Emission_Multiply_Color_1: {r: 2, g: 1.127759, b: 0, a: 1}
+    - _Emission_Multiply_Color_2: {r: 0, g: 0.4838514, b: 2.6701574, a: 1}
+    - _Emission_Multiply_Color_Opacity_1: {r: 0.5028775, g: 0, b: 1, a: 1}
+    - _Emission_Multiply_Color_Opacity_2: {r: 2.1185474, g: 1.5084945, b: 0.5324098,
+        a: 1}
+    - _Emission_UV_Animation_Speed_1: {r: 0, g: 0, b: 0, a: 0}
+    - _Emission_UV_Animation_Speed_2: {r: 0, g: 0, b: 0, a: 0}
+    - _Glitter_Multiply_Color: {r: 4.867144, g: 4.867144, b: 4.867144, a: 1}
+    - _Glitter_Posterize_XY_Steps: {r: 23.01, g: 122, b: 0, a: 0}
+    - _Glitter_UV_Offset: {r: 0, g: 0, b: 0, a: 0}
+    - _Glitter_UV_Polar_Coordinates_Center: {r: 0.5, g: 0.5, b: 0, a: 0}
+    - _Glitter_UV_Polar_Coordinates_Radial_Length_Scale: {r: 1, g: 1, b: 0, a: 0}
+    - _Glitter_UV_Tiling: {r: 0.25, g: 0.25, b: 0, a: 0}
+    - _Gradient_Main_Color: {r: 0, g: 0, b: 0, a: 1}
+    - _Gradient_Main_Color_Opacity: {r: 0, g: 0, b: 0, a: 0}
+    - _Gradient_Shade_Color: {r: 0, g: 0, b: 0, a: 0}
+    - _Gradient_Toony_Shift_Factor: {r: 0, g: 0, b: 0, a: 0}
+    - _HSL_Shift: {r: 0, g: 0, b: 0, a: 0}
+    - _Main_Color: {r: 0.9058824, g: 0.7411765, b: 1, a: 1}
+    - _Matcap_Highlight_Star_Color: {r: 0, g: 7.7416224, b: 42.72252, a: 1}
+    - _Matcap_Highlight_Star_Color_Opacity: {r: 2.118547, g: 1.297983, b: 0, a: 1}
+    - _Matcap_Highlight_Star_UV_Offset: {r: 0.15, g: -0.15, b: 0, a: 0}
+    - _Matcap_Shading_Toony_Shift_Factor: {r: 1, g: 0, b: 0, a: 0}
+    - _Matcap_Shading_UV_Offset: {r: 0.1, g: -0.1, b: 0, a: 0}
+    - _Matcap_Star_Highlight_Shading_Toony_Shift_Factor: {r: 1, g: 0, b: 0, a: 0}
+    - _Matcap_Star_Highlight_Toony_Shift_Factor: {r: 1, g: 0, b: 0, a: 0}
+    - _Outline_Color_Opacity: {r: 0.078431316, g: 0.090196066, b: 0.11764697, a: 0}
+    - _Rim_Light_Color: {r: 1.216786, g: 1.216786, b: 1.216786, a: 1}
+    - _Rim_Light_Color_Opacity: {r: 2.118547, g: 1.508494, b: 0.5324098, a: 1}
+    - _Rim_Light_Toony_Shift_Factor: {r: 1, g: 0, b: 0, a: 0}
+    - _Root_World_Position: {r: 0, g: 0, b: 0, a: 0}
+    - _Root_World_Rotation: {r: 0, g: 0, b: 0, a: 0}
+    - _Shade_Color: {r: 0, g: 0, b: 0, a: 1}
+    - _Shade_Color_Opacity: {r: 0.4, g: 0.2, b: 0.6, a: 1}
+    - _Shading_Attenuation_Invert_Lerp_Min_Max: {r: 0, g: 1, b: 0, a: 0}
+    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+  m_BuildTextureStacks: []
+--- !u!114 &3521033475742161485
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 639247ca83abc874e893eb93af2b5e44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.ShaderGraph.Editor::UnityEditor.Rendering.BuiltIn.AssetVersion
+  version: 0
