@@ -2,11 +2,13 @@
 
 **MLShader** is a Unity **Shader Graph** package for stylized **toon / cel** materials on the **Universal Render Pipeline (URP)**. It ships the main **MLShader** graph, reusable subgraphs, HLSL helpers, optional runtime scripts, and vendored Unity sample subgraphs so consumers do not need to import official Shader Graph samples.
 
+The graph also includes **partial Built-in Render Pipeline (BIRP)** support: some subgraphs and `ShaderLibrary/BIRP` HLSL are used when the target is the legacy **Built-in** pipeline. **URP is the primary, fully intended target**; Built-in coverage is best-effort and may not match every URP feature path.
+
 | | |
 |---|---|
 | **Unity package** | `com.miragamedev.mlshader` |
 | **Minimum editor** | **Unity 6000.4** (`6000.4.0f1` or compatible) |
-| **Render pipeline** | **URP** via `com.unity.render-pipelines.universal` |
+| **Render pipeline** | **URP** (primary). **Built-in (BIRP):** partial — see intro above |
 | **Repository** | [github.com/miramocha/mlshader-upm](https://github.com/miramocha/mlshader-upm) |
 
 Dependencies are declared in [`package.json`](package.json) (notably **Shader Graph** and **URP** 17.4.x).
@@ -16,8 +18,10 @@ Dependencies are declared in [`package.json`](package.json) (notably **Shader Gr
 ## Requirements
 
 - **Unity 6** (6000.4 recommended; see `package.json` fields `unity` / `unityRelease`).
-- A project using **URP** (the package does not target the Built-in Renderer or HDRP for the main graph).
-- **Shader Graph** package (installed automatically as a dependency when you add this package via UPM).
+- **URP** is the main supported pipeline (`package.json` lists `com.unity.render-pipelines.universal`). Use URP for the intended feature set and quality bar.
+- **Built-in (BIRP):** you can use materials in a Built-in project where the shader’s BIRP branches apply, but support is **partial** and not all URP-only behavior is reproduced.
+- **HDRP** is not a supported target for this graph.
+- **Shader Graph** (installed with this package via UPM dependencies).
 
 ---
 
@@ -98,7 +102,7 @@ Runtime helpers (optional):
 | Path | Purpose |
 |------|---------|
 | `Graph/` | Main Shader Graph and fullscreen graphs; `Subgraphs/` for reusable blocks |
-| `ShaderLibrary/` | HLSL includes (BIRP helpers folder name kept for legacy paths; project targets **URP**) |
+| `ShaderLibrary/` | HLSL: `URP/` for URP; `BIRP/` for **partial** Built-in pipeline paths used by the graph |
 | `ThirdParty/ShaderGraph/` | Vendored Unity Shader Graph sample/template subgraphs ([`Third Party Notices.md`](Third%20Party%20Notices.md)) |
 | `Runtime/` | Runtime C# (`MiraGameDev.MLShader` assembly) |
 | `Editor/` | Editor C# (`MiraGameDev.MLShader.Editor`) |
