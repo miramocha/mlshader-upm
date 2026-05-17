@@ -41,11 +41,11 @@ Dependencies are declared in [`package.json`](package.json) (notably **Shader Gr
 
    ```text
    https://github.com/miramocha/mlshader-upm.git#master
-   https://github.com/miramocha/mlshader-upm.git#stable
+   https://github.com/miramocha/mlshader-upm.git#develop
    https://github.com/miramocha/mlshader-upm.git#v1.0.0
    ```
 
-   Prefer **`#v…` tags** for reproducible installs. **`#stable`** tracks the latest promoted tip (same idea as the last release line). **Release tags** use a **`v` prefix** (e.g. Git tag `v1.0.0`). The [`package.json`](package.json) `version` field stays plain SemVer (**`1.0.0`**, no `v`) — bump that on the tagged commit, then create and push the matching `v…` tag on GitHub.
+   Prefer **`#v…` tags** for reproducible installs. **Release tags** use a **`v` prefix** (e.g. Git tag `v1.0.0`). The [`package.json`](package.json) `version` field stays plain SemVer (**`1.0.0`**, no `v`) — bump that on the tagged commit, then create and push the matching `v…` tag on GitHub.
 
 5. Unity clones the repository. This repo’s **package root** is the repository root (where [`package.json`](package.json) lives).
 
@@ -61,17 +61,16 @@ Add (or merge) under `"dependencies"` in your Unity project:
 }
 ```
 
-Use `#branch` (e.g. **`master`**, **`stable`**, **`develop`**), `#v1.0.0` (or another tag), or a full commit hash after `.git`. The dependency name must be **`com.miragamedev.mlshader`** (see `package.json` in this repo).
+Use `#branch` (e.g. **`master`**, **`develop`**), `#v1.0.0` (or another tag), or a full commit hash after `.git`. The dependency name must be **`com.miragamedev.mlshader`** (see `package.json` in this repo).
 
 ### Repository branches
 
 | Branch | Role |
 |--------|------|
 | **`master`** | Default branch; release commits and **`v*`** tags are expected here. |
-| **`stable`** | Promoted tip for optional **`#stable`** UPM installs (fast-forwarded when you ship). |
 | **`develop`** | Day-to-day integration; merge into **`master`** when ready to release. |
 
-There is no separate **`release`** branch — tags carry versioned releases.
+There is no **`stable`** or **`release`** branch — **Git tags** (`v…`) are the supported way to pin versions.
 
 ### Option C — Local development (embedded / file path)
 
